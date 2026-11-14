@@ -1,0 +1,48 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { paginasOrdenadas, caminho, type Pagina } from '../navegacao';
+
+export async function getStaticPaths() {
+  const paginas = await paginasOrdenadas();
+  return paginas.map((pagina) => ({
+    params: { rota: pagina.data.rota.replace(/^\/|\/$/g, '') || undefined },
+    props: { pagina },
+  }));
+}
+
+const { pagina } = Astro.props as { pagina: Pagina };
+const { Content } = await render(pagina);
+const inicio = pagina.data.ordem === 0;
+const outras = inicio ? (await paginasOrdenadas()).filter((p) => p.data.ordem > 0) : [];
+---
+<Base pagina={pagina}>
+  <Content />
+
+  {inicio && (
+    <>
+      <section aria-labelledby="titulo-paginas">
+        <h2 id="titulo-paginas">Neste site</h2>
+        <ol class="cartoes">
+          {outras.map((p) => (
+            <li>
+              <a href={caminho(p.data.rota)}>
+                <span class="num">{p.data.ordem}</span>
+                <span class="cartao-titulo">{p.data.titulo}</span>
+                <span class="cartao-resumo">{p.data.resumo}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="porque-agora" aria-labelledby="titulo-porque">
+        <h2 id="titulo-porque">Porquê agora</h2>
+        <p>
+          O PLANAPREV-DNT 2024–2027 está em vigor e o próximo inquérito nacional (2028–29)
+          começa a ser planeado em 2027. Ver <a href={caminho('/angola-hoje')}>Angola hoje</a>.
+        </p>
+      </section>
+    </>
+  )}
+</Base>

@@ -1,0 +1,78 @@
+---
+import '../styles/global.css';
+import { paginasOrdenadas, rotulo, caminho, type Pagina } from '../navegacao';
+
+interface Props {
+  pagina: Pagina;
+}
+
+const NOME_SITE = 'Condições crónicas em Angola';
+const { pagina } = Astro.props;
+const paginas = await paginasOrdenadas();
+const menu = paginas.filter((p) => p.data.ordem > 0);
+const i = paginas.findIndex((p) => p.id === pagina.id);
+const anterior = i > 0 ? paginas[i - 1] : undefined;
+const seguinte = i < paginas.length - 1 ? paginas[i + 1] : undefined;
+const titulo = pagina.data.ordem === 0 ? NOME_SITE : `${pagina.data.titulo} — ${NOME_SITE}`;
+---
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo}</title>
+    <meta name="description" content={pagina.data.resumo} />
+    <link rel="icon" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+    <header class="topo">
+      <div class="largura">
+        <a class="marca" href={caminho('/')}>{NOME_SITE}</a>
+        <nav aria-label="Páginas do site">
+          <ol class="menu">
+            {menu.map((p) => (
+              <li>
+                <a
+                  href={caminho(p.data.rota)}
+                  aria-current={p.id === pagina.id ? 'page' : undefined}
+                >
+                  <span class="num" aria-hidden="true">{p.data.ordem}</span>
+                  {rotulo(p)}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo" class="largura">
+      <h1>{pagina.data.titulo}</h1>
+      <slot />
+
+      <nav class="anterior-seguinte" aria-label="Navegação entre páginas">
+        {anterior ? (
+          <a class="anterior" href={caminho(anterior.data.rota)} rel="prev">
+            <span class="dir">Anterior</span>
+            <span class="alvo">{rotulo(anterior)}</span>
+          </a>
+        ) : <span />}
+        {seguinte ? (
+          <a class="seguinte" href={caminho(seguinte.data.rota)} rel="next">
+            <span class="dir">Seguinte</span>
+            <span class="alvo">{rotulo(seguinte)}</span>
+          </a>
+        ) : <span />}
+      </nav>
+    </main>
+
+    <footer class="rodape">
+      <div class="largura">
+        <p>{NOME_SITE}: ponto de situação para preparar um inquérito nacional do tipo STEPS.</p>
+        <p>Os elementos marcados <span class="a-confirmar">[a confirmar]</span> ainda estão a ser verificados.</p>
+        <p><a href="https://github.com/filustrias/angola_steps" target="_blank" rel="noopener">Código-fonte no GitHub</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

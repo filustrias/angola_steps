@@ -1,0 +1,18 @@
+iso3,pais,inquerito,ano,tipo,abrangencia,faixa_etaria,amostra,fatores_risco,prevalencia_com_exame,uso_servicos,link,a_confirmar
+AGO,Angola,IIMS 2023-24 (DHS),2023-2024,so_entrevista,nacional (18 provincias; urbano/rural),15-49,,parcial,nao,parcial,https://dhsprogram.com/pubs/pdf/SR295/SR295.pdf,amostra; fatores_risco; uso_servicos
+AGO,Angola,Inquerito HTA Dande (CISA) baseado no STEPS,2011,STEPS,local (Dande; Bengo),18-64,1464,sim,sim,sim,https://www.biomedcentral.com/1471-2458/13/90,
+AGO,Angola,CardioBengo (CISA) baseado no STEPS v3.0,2013-2014,STEPS,local (Dande; Bengo),15-64,2484,sim,sim,sim,https://core.ac.uk/download/47135131.pdf,
+MOZ,Mocambique,STEPS nacional,2005,STEPS,nacional,25-64,,sim,sim,sim,https://repositorio-aberto.up.pt/handle/10216/160560,amostra
+MOZ,Mocambique,STEPS nacional,2014-2015,STEPS,nacional,15-64,2965,sim,sim,sim,https://repositorio-aberto.up.pt/handle/10216/110436,amostra (2965 na analise de HTA; 3116 na analise de sal)
+MOZ,Mocambique,InCRONICA 2024 (STEPS),2024,STEPS,nacional,18-69,meta 5720 (84% atingido),sim,sim,sim,https://www.afro.who.int/sites/default/files/2025-04/RELAToRIO-NACIONAL-InCRoNICA.pdf,amostra final
+BRA,Brasil,Pesquisa Nacional de Saude (PNS) 2019,2019,inquerito_exame,nacional,,,sim,parcial,sim,https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html,faixa_etaria; amostra; exames em 2019
+BRA,Brasil,Pesquisa Nacional de Saude (PNS) 2013 (subamostra de exames laboratoriais),2013-2015,inquerito_exame,nacional,,,sim,sim,sim,https://scielosp.org/pdf/rbepid/2019.v22suppl2/E190004.SUPL.2/pt,faixa_etaria; amostra; anos
+BRA,Brasil,ELSA-Brasil (linha de base),2008-2010,coorte,6 instituicoes publicas,35-74,15105,sim,sim,sim,https://pmc.ncbi.nlm.nih.gov/articles/PMC4339754,
+BRA,Brasil,ELSI-Brasil (onda 1),2015-2016,coorte,nacional,50+,,sim,sim,sim,https://elsi.cpqrr.fiocruz.br/,amostra
+BRA,Brasil,Estudo Pro-Saude (UERJ) linha de base,1999-2001,coorte,funcionarios de uma universidade (Rio de Janeiro),adultos,3253,sim,sim,sim,https://scielosp.org/pdf/rbepid/2005.v8n4/454-466/pt,faixa_etaria
+ZAF,Africa do Sul,SANHANES-1,2011-2012,inquerito_exame,nacional,15+,,sim,sim,sim,https://pmc.ncbi.nlm.nih.gov/articles/PMC5656122,amostra
+ZAF,Africa do Sul,WHO SAGE (onda 1),2007-2008,coorte,nacional,50+,,sim,sim,sim,https://pmc.ncbi.nlm.nih.gov/articles/PMC3535754,amostra
+IND,India,NFHS-5,2019-2021,DHS_biomarcadores,nacional (707 distritos),15+,,parcial,sim,parcial,https://ssph-journal.org/articles/10.3389/ijph.2024.1606766/full,anos; amostra
+IND,India,LASI (onda 1),2017-2019,coorte,nacional (35 estados e territorios),45+,72262,sim,sim,sim,https://iipsindia.ac.in/sites/default/files/Hypertension_awareness.pdf,
+USA,Estados Unidos,NHANES,,inquerito_exame,nacional,,,sim,sim,sim,,todos os campos
+KOR,Coreia do Sul,KNHANES,,inquerito_exame,nacional,,,sim,sim,sim,,todos os campos

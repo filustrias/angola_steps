@@ -12,6 +12,11 @@ Itens a resolver antes de publicar. No site, cada um aparece como `[a confirmar]
 - [ ] Rastreio do cancro do colo e da mama: referido na introdução do cap. 9 (p. 171); procurar os resultados.
 - [ ] Obter o custo do IIMS com o INE.
 
+## PNS 2019 (página 6)
+- [ ] Valor nacional de artrite ou reumatismo (tabela SIDRA).
+- [ ] Valor nacional de outra doença mental.
+- [ ] Valor nacional de doença crónica do pulmão (enfisema, bronquite crónica, DPOC).
+
 ## STEPS
 - [ ] Confirmar a faixa etária-padrão e os itens core sobre diagnóstico e tratamento no instrumento v3.2.
 

@@ -16,6 +16,8 @@ Itens a resolver antes de publicar. No site, cada um aparece como `[a confirmar]
 - [ ] Valor nacional de artrite ou reumatismo (tabela SIDRA).
 - [ ] Valor nacional de outra doença mental.
 - [ ] Valor nacional de doença crónica do pulmão (enfisema, bronquite crónica, DPOC).
+- [ ] Verificar no questionário da PNS se há perguntas sobre barreiras de acesso e distância à unidade sanitária.
+- [ ] IIMS: resultado do exame clínico das mamas.
 
 ## STEPS
 - [ ] Confirmar a faixa etária-padrão e os itens core sobre diagnóstico e tratamento no instrumento v3.2.
